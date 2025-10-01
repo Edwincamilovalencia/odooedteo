@@ -14,6 +14,7 @@ class LlamadaSettings(models.Model):
     name = fields.Many2one('res.partner', string='Persona', required=True)
     agent_name = fields.Many2many('retain.call.history', string='Agentes asignados')
     agent_names_display = fields.Char(string='Nombres de agentes', compute='_compute_agent_names_display', store=False)
+    prueba = fields.Char(string='Prueba')
 
     # Mostrar los nombres únicos de agentes asignados en la vista lista
     @api.depends('agent_name')
